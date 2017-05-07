@@ -170,5 +170,14 @@ namespace WebLinterVsix
         {
             return _snapshots.ContainsKey(fileName);
         }
+
+        public List<LintingError> GetErrors(string fileName) {
+            var errorList = new List<LintingError>();
+            foreach (List<LintingError> errors in _snapshots.Values.Select(x => x.Errors))
+            {
+                errorList.AddRange(errors);
+            }
+            return errorList;
+        }
     }
 }

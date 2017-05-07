@@ -27,6 +27,8 @@ namespace WebLinter
                 le.Message = obj["failure"]?.Value<string>();
                 le.LineNumber = obj["startPosition"]?["line"]?.Value<int>() ?? 0;
                 le.ColumnNumber = obj["startPosition"]?["character"]?.Value<int>() ?? 0;
+                le.EndLineNumber = obj["endPosition"]?["line"]?.Value<int>() ?? 0;
+                le.EndColumnNumber = obj["endPosition"]?["character"]?.Value<int>() ?? 0;
                 le.IsError = Settings.TSLintWarningsAsErrors;
                 le.ErrorCode = obj["ruleName"]?.Value<string>();
                 le.HelpLink = $"https://palantir.github.io/tslint/rules/{le.ErrorCode}";

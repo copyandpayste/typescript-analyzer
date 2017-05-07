@@ -19,6 +19,10 @@ namespace WebLinterVsix
             _errors.AddRange(errors);
         }
 
+        public List<LintingError> Errors {
+            get { return _errors; }
+        }
+
         public override int Count
         {
             get { return _errors.Count; }

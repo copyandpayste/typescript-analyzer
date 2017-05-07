@@ -18,6 +18,8 @@ namespace WebLinter
         public string Message { get; set; }
         public int LineNumber { get; set; }
         public int ColumnNumber { get; set; }
+        public int EndLineNumber { get; set; }
+        public int EndColumnNumber { get; set; }
         public bool IsError { get; set; } = true;
         public string ErrorCode { get; set; }
         public string HelpLink { get; set; }
